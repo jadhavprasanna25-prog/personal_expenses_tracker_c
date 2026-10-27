@@ -22,4 +22,13 @@ while(1)
     printf("4. Exit\n");
     printf("Enter choice\n");
     
+    if(scanf("%d", &choice) != 1)
+    {
+        printf("Invalid input!\n");
+        break;
+    }
+    switch(choice)
+    {
+        
+    }
 }
