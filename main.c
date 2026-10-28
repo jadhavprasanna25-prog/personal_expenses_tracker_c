@@ -29,6 +29,31 @@ while(1)
     }
     switch(choice)
     {
-        
+        case 1:
+        if(count>=Max)  
+        {
+            printf("Expenses list is full\n");
+            break;
+        } 
+
+        printf("Enter name :\n");
+        scanf(" %99[^\n]", names[count]);
+
+         printf("Enter amount : Rs.\n");
+         if(scanf("%f",&amounts[count]) != 1 || amounts[count] < 0)
+         {
+            printf("Invalid amount\n");
+            break;
+         }
+         count++;
+         printf("Expenses asdded successfully\n");
+         break;
+         case 2:
+         if(count==0)
+         {
+            printf("No expenses recorded\n");
+            break;
+         }
     }
+}
 }
