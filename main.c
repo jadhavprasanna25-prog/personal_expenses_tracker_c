@@ -54,6 +54,23 @@ while(1)
             printf("No expenses recorded\n");
             break;
          }
+         for(i=0;i<count;i++)
+         {
+            printf("%d. %s - Rs. %.2f\n");
+            break;
+         }
+         case 3:
+         if(count == 0)
+         {
+            printf("No exoenses to delete\n");
+            break;
+         }
+         for(i=0;i<count;i++)
+         {
+            printf("%d. %s - Rs. %.2f\n",i+1, names[i],amouunts[i]);
+         }
+         
+         
     }
 }
 }
