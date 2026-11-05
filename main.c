@@ -6,7 +6,7 @@
 
 int main()
 {
-    char names[50];
+    char names[Max][100];
     int count=0;
     float amounts[Max];
     int i,choice,num;
@@ -17,9 +17,9 @@ while(1)
     printf("\n==========Personal Expenses Tracker=========\n");
     printf("1. Enter the expense\n");
     printf("2. View expenses\n");
-    printf("3. Total expenses\n");
-    printf("3. Delete expenses\n");
-    printf("4. Exit\n");
+    printf("3. Delete Expenses \n");
+    printf("4. Total Expenses\n");
+    printf("5. Exit\n");
     printf("Enter choice\n");
     
     if(scanf("%d", &choice) != 1)
@@ -48,6 +48,7 @@ while(1)
          count++;
          printf("Expenses asdded successfully\n");
          break;
+
          case 2:
          if(count==0)
          {
@@ -56,23 +57,29 @@ while(1)
          }
          for(i=0;i<count;i++)
          {
-            printf("%d. %s - Rs. %.2f\n");
-            break;
+            printf("%d. %s - Rs. %.2f\n", i+1, names[i], amounts[i]);
          }
+         break;
+
          case 3:
          if(count == 0)
          {
-            printf("No exoenses to delete\n");
+            printf("No expenses to delete\n");
             break;
          }
          for(i=0;i<count;i++)
          {
-            printf("%d. %s - Rs. %.2f\n",i+1, names[i],amouunts[i]);
+            printf("%d. %s - Rs. %.2f\n",i+1, names[i],amounts[i]);
          }
-         printf("Enetr the number to delete\n");
+         printf("enter the number to delete\n");
          if(scanf("%d",&num) !=1)
          {
             printf("invalid input\n");
+            break;
+         }
+         if(num<1 || num>count)
+         {
+            printf("Invalid expenses number\n");
             break;
          }
          for(i=num-1;i<count-1;i++)
@@ -90,8 +97,9 @@ while(1)
          {
             total+=amounts[i];
          }
-         printf("Total Expenses: Rs. %f\n",total);
+         printf("Total Expenses: Rs. %.2f\n",total);
          break;
+         
           case 5:
           printf("Thank you for using the tracker!\n");
          return 0;
