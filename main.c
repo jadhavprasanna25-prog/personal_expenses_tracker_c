@@ -69,8 +69,36 @@ while(1)
          {
             printf("%d. %s - Rs. %.2f\n",i+1, names[i],amouunts[i]);
          }
-         
-         
+         printf("Enetr the number to delete\n");
+         if(scanf("%d",&num) !=1)
+         {
+            printf("invalid input\n");
+            break;
+         }
+         for(i=num-1;i<count-1;i++)
+         {
+            strcpy(names[i], names[i+1]);
+            amounts[i]=amounts[i+1];
+         }
+         count--;
+         printf("Expenses deleted!\n");
+         break;
+
+         case 4: 
+         total = 0;
+         for(i=0;i<count;i++)
+         {
+            total+=amounts[i];
+         }
+         printf("Total Expenses: Rs. %f\n",total);
+         break;
+          case 5:
+          printf("Thank you for using the tracker!\n");
+         return 0;
+
+         default:
+         printf("Choose a number from 1 to 5.\n");
     }
 }
+return 0;
 }
