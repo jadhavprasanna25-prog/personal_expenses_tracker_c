@@ -6,7 +6,7 @@ A simple command-line expense tracker written in C. It records daily expenses an
 - Add expenses
 - View all expenses
 - Calculate total spending
-- Menu-driven interface
+- Delete expenses
 
 ## How to Run
 
